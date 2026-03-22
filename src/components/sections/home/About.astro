@@ -1,0 +1,26 @@
+---
+// components
+import Heading from "../../elements/Heading.astro";
+import Text from "../../elements/Text.astro";
+import Container from "../../elements/Container.astro";
+import Link from "../../elements/Link.astro";
+import ImageContainer from "../../elements/ImageContainer.astro";
+
+// assets
+import prince_pic_2 from "../../../assets/images/peter.jpg";
+---
+
+<Container variant={'xl'}>
+    <Heading tagName="h2" tagSize="h2" class="text-center">About</Heading>
+    <div class="flex lg:flex-row lg:gap-16 gap-10 flex-col">
+        <div class="flex flex-col items-start gap-6 lg:pt-6 text-base-900 lg:flex-1">
+            <Text variant={'xl'}>I have 5 years of experience in Software Development with a track record of delivering high-quality, scalable and maintainable solutions.</Text>
+            <Text variant={'sm'}>Proficient in Camunda, Java, Spring Boot and NodeJS ecosystems, frameworks, design patterns, clean coding practices, functional programming and low-level design. Skilled in problem-solving, collaboration, and adapting to new technologies.</Text>
+            <Text variant={'sm'}>Strong communicator with a passion for continuous learning and innovation.</Text>
+            <Link variant={'button'} href="/about">More about me</Link>
+        </div>
+        <div class="w-full lg:h-[600px] h-auto lg:flex-1">
+            <ImageContainer src={prince_pic_2} alt="Prince Bhagat" />
+        </div>
+    </div>
+</Container>

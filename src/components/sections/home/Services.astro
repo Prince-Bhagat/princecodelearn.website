@@ -1,0 +1,42 @@
+---
+// components
+import Container from "../../elements/Container.astro";
+import Heading from "../../elements/Heading.astro";
+import Dropdown from "../../elements/Dropdown.astro";
+import ContainerBottom from "../../elements/ContainerBottom.astro";
+
+// content
+const services = [
+    { 
+        title: "Full-Stack Development",
+        text: "Building end-to-end web applications using Java, Spring Boot, NodeJS, React, and Angular with scalable architectures."
+    },
+    { 
+        title: "Workflow Automation",
+        text: "Designing and implementing business process automation using Camunda BPMN for complex insurance and enterprise workflows."
+    },
+    { 
+        title: "Cloud Solutions",
+        text: "Developing cloud-native applications on AWS with microservices, serverless functions, and optimized database solutions."
+    },
+    { 
+        title: "API Development",
+        text: "Creating high-performance, secure APIs with proper design patterns, testing, and continuous integration practices."
+    },
+]
+---
+
+<Container variant={'md'}>
+    <Heading tagName="h2" tagSize="h2" class="text-center">Services</Heading>
+    <div class="flex flex-col gap-4">
+        <Container class="flex flex-col gap-4 p-6 border-3 border-base-900">
+            {
+                services.map((service, index) => (
+                    <Dropdown title=`${index + 1}. ${service.title}` text={service.text} />  
+                ))
+            }       
+        </Container>
+        <ContainerBottom />    
+    </div>
+
+</Container>

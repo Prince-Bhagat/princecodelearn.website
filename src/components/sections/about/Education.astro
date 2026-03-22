@@ -1,0 +1,38 @@
+---
+// components
+import Container from "../../elements/Container.astro";
+import Heading from "../../elements/Heading.astro";
+import ResumeDropdown from "../../elements/ResumeDropdown.astro";
+import ContainerBottom from "../../elements/ContainerBottom.astro";
+
+// content
+const education = [
+    { 
+        title: "Bachelor of Engineering - IT",
+        place: "Pune Institute of Computer Technology (PICT)",
+        period: "2018 - 2022",
+        text: "Honors in Cybersecurity. Fundamental programming including OOP, Algorithms, Data Structures, C++, etc. Used NodeJS, Spring Boot, React for hackathons and projects."
+    },
+    { 
+        title: "Junior College (HSC - Science)",
+        place: "Fergusson College",
+        period: "2016 - 2018",
+        text: "Science and Maths."
+    }
+]
+---
+
+<Container variant={'md'}>
+    <Heading tagName="h2" tagSize="h2" class="text-center">Education</Heading>
+    <div class="flex flex-col gap-4">
+        <Container class="flex flex-col gap-4 p-6 border-3 border-base-900">
+            {
+                education.map((i) => (
+                    <ResumeDropdown title={i.title} place={i.place} period={i.period} text={i.text} />
+                ))
+            }
+        </Container>
+        <ContainerBottom /> 
+    </div>
+    
+</Container>
